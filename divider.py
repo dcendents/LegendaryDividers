@@ -1,3 +1,4 @@
+import sys
 import math
 import os
 import textwrap
@@ -443,8 +444,8 @@ class Divider:
         return result
 
 
-def main(input_file: str):
-    dividers, global_properties = Divider.load(input_file)
+def main():
+    dividers, global_properties = Divider.load(sys.argv[1])
     pages = Divider.render_pages(dividers, global_properties)
     pdf = FPDF('P', "in", "Letter")
     flipped_pdf = FPDF('P', "in", "Letter")
@@ -465,4 +466,4 @@ def main(input_file: str):
 
 
 if __name__ == "__main__":
-    main("cards.yaml")
+    main()
