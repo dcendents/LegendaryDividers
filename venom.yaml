@@ -1,0 +1,123 @@
+# BEGIN BOILERPLATE
+henchmen: &henchmen
+  card_type: "HENCHMEN"
+  type_background: "#dcbc48"
+  type_color: "White"
+villain: &villain
+  card_type: "VILLAIN"
+  type_background: "#623535"
+  type_color: "White"
+mastermind: &mastermind
+  card_type: "MASTERMIND"
+  type_background: "#766f92"
+  type_color: "White"
+player: &player
+  card_type: "           "
+  type_background: "#7e8184"
+hero: &hero
+  card_type: "HERO"
+  type_background: "#355e3b"
+  type_color: "White"
+clear: &clear !!python/tuple [0, 0, 0, 0]
+font: &font "resources/KOMIKAX_.ttf"
+# END BOILERPLATE
+
+grid_lines: True
+grid_width: 1
+grid_spacing: 18
+double_sided: False
+separate_docs: True
+width_count: 2
+height_count: 3
+page_width: 1700
+page_height: 2200
+divider_width: &divider_width 715
+divider_height: &divider_height 592
+offset_height: 100
+offset_width: 90
+margin_width: 80
+margin_height: 100
+format:
+  width: *divider_width
+  height: *divider_height
+  icon_height: &icon_height 32
+  properties:
+    - position: [0, 0]
+      size: [*divider_width, &label_height 72]
+      type: "container"
+      spacing: 8
+      backwards: False
+      properties:
+        - property: "card_type"
+          required: False
+          position: [0, 0]
+          size: [200, *label_height]
+          type: "text"
+          background_property: "type_background"
+          background_default: "Black"
+          text_color_property: "type_color"
+          text_color_default: "White"
+          font: *font
+          font_size: 24
+          centered_width: True
+          centered_height: True
+        - property: "name"
+          required: True
+          position: ["auto", 0]
+          size: ["auto", *label_height]
+          type: "text"
+          background_property: "name_background"
+          background_default: "White"
+          text_color_property: "name_color"
+          text_color_default: "Black"
+          font: *font
+          font_size: 24
+          centered_width: False
+          centered_height: True
+    - property: "image"
+      position: [0, *label_height]
+      size: [*divider_width, &image_height 520]
+      type: "image"
+populate_from_rarities:
+  rarities:
+    <<: *hero
+    <<: *hero
+    common1: 5
+    common2: 5
+    uncommon: 3
+    rare: 1
+  properties:
+    color: "colors"
+    cost: "costs"
+    attack: "attacks"
+    recruit: "recruits"
+    piercing: "piercings"
+
+cards:
+  - <<: *mastermind
+    name: "HYBRID"
+    image: "box_venom"
+  - <<: *mastermind
+    name: "POISON THANOS"
+    image: "box_venom"
+  - <<: *villain
+    name: "LIFE FOUNDATION"
+    image: "box_venom"
+  - <<: *villain
+    name: "POISONS"
+    image: "box_venom"
+  - <<: *hero
+    name: "CARNAGE"
+    image: "box_venom"
+  - <<: *hero
+    name: "VENOM"
+    image: "box_venom"
+  - <<: *hero
+    name: "VENOM ROCKET"
+    image: "box_venom"
+  - <<: *hero
+    name: "VENOMIZED DR. STRANGE"
+    image: "box_venom"
+  - <<: *hero
+    name: "VENOMPOOL"
+    image: "box_venom"
