@@ -104,7 +104,7 @@ cards:
     name: "HYDRA ELITE"
     image: "box_shield"
   - <<: *villain
-    name: "HYDRA OFFSHOOT"
+    name: "A.I.M., HYDRA OFFSHOOT"
     image: "box_shield"
   - <<: *hero
     name: "AGENT PHIL COULSON"
