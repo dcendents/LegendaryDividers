@@ -14,7 +14,17 @@ Linux users will have both tools pre-installed with Ubuntu 16.04+ and Archlinux.
 
 Ensure Python 3.6 is installed and added to the system PATH.
 
-Then run `python3 -m venv .env && source .env/bin/activate && pip install -r requirements.txt` and all the required packages will install.
+Then run 
+
+```
+python3 -m venv .env 
+source .env/bin/activate 
+python -m pip install -U --force-reinstall pip
+pip install wheel
+pip install -r requirements.txt
+``` 
+
+and all the required packages will install.
 
 ## Use
 
